@@ -1,3 +1,4 @@
+package BasicsProgram;
 public class sdp {
     public static void main(String[] args){
         StringBuilder str = new StringBuilder();

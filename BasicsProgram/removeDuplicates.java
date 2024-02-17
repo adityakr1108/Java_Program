@@ -1,3 +1,4 @@
+package BasicsProgram;
 import java.util.Scanner;
 
 public class removeDuplicates {

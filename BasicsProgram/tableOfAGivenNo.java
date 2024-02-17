@@ -1,3 +1,4 @@
+package BasicsProgram;
 import java.util.Scanner;
 public class tableOfAGivenNo {
     public static void main(String[] args){
