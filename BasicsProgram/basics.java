@@ -1,11 +1,21 @@
 package BasicsProgram;
-public class basics {
-    public static void main(String [] args){
-        int i = 1;
-        while(i<=100){
-            System.out.println("Hello World  " + i);
-            i+=1;
+
+import java.util.Scanner;
+
+public class Basics {
+    public static void main(String[] args){
+        int arr[] =new int[50];
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i<=4;i++){
+            arr[i] = sc.nextInt();
         }
+        for(int i = 0; i<=4;i++){
+            System.out.println(arr[i]);
+        }
+        sc.close();
+
     }
+
+    
     
 }

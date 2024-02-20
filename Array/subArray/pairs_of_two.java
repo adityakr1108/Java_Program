@@ -1,4 +1,4 @@
-package Array;
+package Array.subArray;
 import java.util.Scanner;
 public class pairs_of_two {
     public static void main(String[] args) {

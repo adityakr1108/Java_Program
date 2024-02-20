@@ -1,4 +1,4 @@
-package Array;
+package Array.Practice;
 import java.util.Scanner;
 public class largestInArray {
     public static void main(String[] args) {
