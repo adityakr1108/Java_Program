@@ -20,7 +20,7 @@ public class Basics {
 
     }
 }
-class Student{
+class Student{  
     String name;
     int age;
      String passs;
