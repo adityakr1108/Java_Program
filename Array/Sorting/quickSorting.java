@@ -20,9 +20,9 @@ public class quickSorting {
  public static int partition(int arr[],int si,int ei){
     int pivot= arr[ei];
     int i = si-1;
-    for(int j = 0; j<ei;j++){
+    for(int j = si; j<ei;j++){
         if(arr[j] <= pivot){
-            i++;
+            i++; // to make place for swapped elements
             //swap;
             int temp = arr[j];
             arr[j] = arr[i];
