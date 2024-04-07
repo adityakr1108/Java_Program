@@ -72,23 +72,104 @@ public class Linked_List {
         temp = tail;
         size--;
     }
-    
+
+    void deleteAtNthNode(int n){
+        Node temp = head;
+        int sz = 0;
+        while(temp!=null){
+            temp = temp.next;
+            sz++;
+        }
+        if(n == sz){
+            head = head.next;
+            return;
+        }
+        int i = 0;
+        int iToFind = sz-i;
+        Node prev = head;
+        while(i<iToFind){
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return; 
+        
+    }
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null || fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    void palindrome(){
+        Node mid = findMid(head);
+        Node prevPoi = null;
+        Node currPoi = mid;
+        Node nextPoi;
+        while(currPoi != null){
+            nextPoi = currPoi.next;
+            currPoi.next = prevPoi;
+            
+        }
+    }
     public int search(int search){
         Node temp = head;
-        if(search == temp.data){
-            return 0;
-        }
         int index = 0;
         while(temp!=null){
            if(temp.data == search){
             return index;
            }
+           temp = temp.next;
            index++;
         }
-        if(index == 0){
-            System.out.println("Element not found...");
+        
+        return -1;
+    }
+    public int helper(Node head, int search){
+         if(head == null){
+            return -1;
+         }
+         if(head.data == search){
+            return 0;
+         }
+         int idx = helper(head.next,search);
+         if(idx == -1){
+           return -1;
+         }
+         return idx+1;
+    }
+    public int recSearch(int search){
+        return helper(head,search);
+    }
+    public boolean reverse(){
+      if (head == null || head.next == null){
+        return true;
+      }
+      Node prev = null;
+      Node curr = head;
+      Node next;
+        while(curr!= null){
+
         }
-        return index;
+
+    }
+
+
+    public static boolean checkCycle(){ // floyds' Algorithm to find cycle
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next!= null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
     }
     
     public static void main(String[] args){
@@ -100,10 +181,15 @@ public class Linked_List {
                 int no = sc.nextInt();
                 ll.addAtFirst(no);
             }
-       //     ll.addAtLast(7);
-     //       ll.inserAtMiddle(10,4);
-     //       ll.removeAtFirst();
-            System.out.println(ll.search(6));
+        //ll.addAtLast(7);
+        //ll.inserAtMiddle(10,4);
+        //ll.removeAtFirst();
+        //System.out.println("Enter the elemnt to search...");
+        //int search = sc.nextInt();
+        //System.out.println("Elemnt found at index..."+ll.search(search));
+        //System.out.println(ll.recSearch(search));
+        ll.print();
+            ll.reverse();
             ll.print();
             System.out.println();
          //   System.out.println(ll.size);
