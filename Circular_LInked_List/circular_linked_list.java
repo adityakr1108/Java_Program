@@ -22,7 +22,7 @@
         newNode.next = last.next;
         last.next = newNode;
             return last;
-    }
+        }
         static Node addEnd(Node last, int data) {
         if (last == null)
         return addToEmpty(last, data);
@@ -60,6 +60,7 @@ if (last.data == key && last.next == last) {
 last = null;
 return last;
 }
+
 Node temp = last, d = new Node();
 if (last.data == key) {
 while (temp.next != last) {
@@ -80,8 +81,8 @@ return last;
     static void traverse(Node last) {
         Node p;
         if (last == null) {
-            return;
             System.out.println("List is empty.");
+            return;
 }
 p = last.next;
 do {
