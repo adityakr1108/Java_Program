@@ -51,10 +51,18 @@ public class doubleLinkedList {
         if(head == null){
             System.out.println("Reverse");
         }
-        while(head!= null){
-            head.next = head;
-            head.prev
+        Node prev = null;
+        Node curr = head;
+        Node next;
+        while(curr!= null){
+            next= curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
         }
+        head = prev;
     }
     public void print(){
         if(head == null){
@@ -77,9 +85,11 @@ public class doubleLinkedList {
         db.addAtFirst(6);
         db.addAtFirst(7);
         db.print();
-        db.removeAtFirst();
+      //  db.removeAtFirst();
         db.print();
-        db.removeAtLast();
+      //  db.removeAtLast();
+        db.print();
+        db.reverse();
         db.print();
     }
     
