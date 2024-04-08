@@ -1,6 +1,6 @@
 package Stack;
 import java.util.*;
-public class stack {
+public class stack_using_arrayList {
     static ArrayList<Integer> list = new ArrayList<>();
 
     public static boolean isEmpty(){
@@ -24,13 +24,13 @@ public class stack {
         return list.get(list.size()-1);
     }
     public static void main(String[] args) {
-        stack s  = new stack();
+        stack_using_arrayList s  = new stack_using_arrayList();
         s.push(4);
         s.push(5);
         s.push(6);
         s.push(7);
         s.push(8);
-        while(!stack.isEmpty()){
+        while(!stack_using_arrayList.isEmpty()){
             System.out.println(s.peek());
             s.pop();
             
