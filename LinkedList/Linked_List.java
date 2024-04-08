@@ -98,7 +98,7 @@ public class Linked_List {
     public Node findMid(Node head){
         Node slow = head;
         Node fast = head;
-        while(fast != null || fast.next != null){
+        while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -145,15 +145,18 @@ public class Linked_List {
     public int recSearch(int search){
         return helper(head,search);
     }
-    public boolean reverse(){
+    public void reverse(){
       if (head == null || head.next == null){
-        return true;
+        return;
       }
       Node prev = null;
       Node curr = head;
       Node next;
         while(curr!= null){
-
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next; 
         }
 
     }

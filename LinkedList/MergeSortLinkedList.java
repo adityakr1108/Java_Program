@@ -7,10 +7,10 @@ public static  class Node{
         this.next = null;
     }
 }
- public Node head;
+public static Node head;
 public static int size;
 public static Node tail;
- void addAtFirst(int data){
+public void addAtFirst(int data){
     Node newNode = new Node(data);
     size++;
     if(head == null){
@@ -20,7 +20,7 @@ public static Node tail;
     newNode.next = head;
     head = newNode;
 }
- void print(){
+public void print(){
     Node temp= head;
     while(temp  != null){
         System.out.print(temp.data + "->");
@@ -30,7 +30,7 @@ public static Node tail;
     
 }   
 
-     Node mergeSort(Node head){
+    public Node mergeSort(Node head){
         if(head == null || head.next == null){
             return head;
         }
@@ -98,7 +98,6 @@ public static Node tail;
         ml.addAtFirst(5);
         ml.addAtFirst(6);
         ml.addAtFirst(7);
-
         ml.print();
         ml.head = ml.mergeSort(ml.head);
          ml.print();

@@ -79,6 +79,7 @@ public class ZigZagLinkedList {
         zz.addAtLast(3);
         zz.addAtLast(4);
         zz.addAtLast(5);
+        zz.addAtLast(6);
         zz.print();
         zz.zigzag();
         zz.print();
