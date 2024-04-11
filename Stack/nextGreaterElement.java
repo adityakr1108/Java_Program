@@ -5,7 +5,6 @@ public class nextGreaterElement {
         Stack<Integer> stack = new Stack<>();
         int arr[] = {6,8,0,1,3};
         int nextGreater[] = new int[arr.length];
-    // for(int i = 0; i<arr.length;i++){  // for left most greater element 
         for(int i = arr.length-1;i>=0;i--){  // for right most greater element
     
             while(!stack.isEmpty() && arr[stack.peek()] <= arr[i]){

@@ -15,5 +15,6 @@ public static void main(String[] args) {
         result.append(stack.pop());
     }
     System.out.println(result);
+    sc.close();
 }
 }
