@@ -3,29 +3,30 @@ import java.util.*;
 public class validParenthesis {
     public static boolean valid(){
         Stack<Character> par = new Stack<>();
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        int i = 0;
-        while(i<str.length()){
-            char ch = str.charAt(i);
-            if(ch == '(' || ch == '{' || ch == '['){
-                par.push(ch);
-            }
-            else{
-                if(par.isEmpty()){
-                    return false;
-                }
-                if((par.peek() == '(' && ch == ')') || (par.peek() == '{' && ch == '}') || (par.peek() == '[' && ch == ']') ){
-                    par.pop();
+        try (Scanner sc = new Scanner(System.in)) {
+            String str = sc.next();
+            int i = 0;
+            while(i<str.length()){
+                char ch = str.charAt(i);
+                if(ch == '(' || ch == '{' || ch == '['){
+                    par.push(ch);
                 }
                 else{
-                    return false;
+                    if(par.isEmpty()){
+                        return false;
+                    }
+                    if((par.peek() == '(' && ch == ')') || (par.peek() == '{' && ch == '}') || (par.peek() == '[' && ch == ']') ){
+                        par.pop();
+                    }
+                    else{
+                        return false;
+                    }
                 }
-            }
 
-            i++;
+                i++;
+            }
+            sc.close();
         }
-        sc.close();
         if(par.isEmpty()){
             return true;
         }
