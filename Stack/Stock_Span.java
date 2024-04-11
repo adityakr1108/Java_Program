@@ -6,7 +6,7 @@ public class Stock_Span {
         Stack<Integer> s = new Stack<>();
         span[0] = 1;
         s.push(0);
-        for(int i = 1; i<stocks.length;i++){
+        for(int i = 1  ; i<stocks.length;i++){
             int currPrice = stocks[i];
             while(!s.isEmpty() && currPrice > stocks[s.peek()]){
                 s.pop();
