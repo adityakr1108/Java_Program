@@ -47,48 +47,49 @@ public class nextGreaterElement {
     public static void nextSmallestElementFromRight(){
         Stack<Integer> stack = new Stack<>();
         int arr[] = {6,8,0,1,3};
-        int nextGreater[] = new int[arr.length];
+        int nextSmallest[] = new int[arr.length];
         for(int i = arr.length-1;i>=0;i--){  // for right most greater element
     
             while(!stack.isEmpty() && arr[stack.peek()] >= arr[i]){
                 stack.pop();
             }
             if(stack.isEmpty()){
-                nextGreater[i] = -1;
+                nextSmallest[i] = arr.length;
             }
             else{
-                nextGreater[i] = arr[stack.peek()];
+                nextSmallest[i] =stack.peek();
             } 
             stack.push(i);
         }
         for(int i = 0; i<arr.length;i++){
-            System.out.print(nextGreater[i] + " ");
+            System.out.print(nextSmallest[i] + " ");
         }
         System.out.println();
     }
     public static void nextSmallestElementFromLeft(){
         Stack<Integer> stack = new Stack<>();
         int arr[] = {6,8,0,1,3};
-        int nextGreater[] = new int[arr.length];
+        int nextSmallestLeft[] = new int[arr.length];
     for(int i = 0; i<arr.length;i++){  // for left most greater element
             while(!stack.isEmpty() && arr[stack.peek()] >= arr[i]){
                 stack.pop();
             }
             if(stack.isEmpty()){
-                nextGreater[i] = -1;
+                nextSmallestLeft[i] = arr.length;
             }
             else{
-                nextGreater[i] = arr[stack.peek()];
+                nextSmallestLeft[i] = stack.peek();
             } 
             stack.push(i);
         }
         for(int i = 0; i<arr.length;i++){
-            System.out.print(nextGreater[i] + " ");
+            System.out.print(nextSmallestLeft[i] + " ");
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
+    int arr[] = {6,8,0,1,3};
        nextGreaterElementFromRight();
        nextGreaterElementFromLeft();
        nextSmallestElementFromRight(); 
