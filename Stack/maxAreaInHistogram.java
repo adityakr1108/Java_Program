@@ -43,9 +43,8 @@ public class maxAreaInHistogram {
         int [] width = new int[height.length];
         for(int i = 0; i<width.length;i++){
             width[i] = nsr[i] - nsl[i] -1;
-            if(width[i] * height[i] > maxArea){
-                maxArea = width[i] * height[i];
-            }
+            int currentArea = width[i] * height[i];
+            maxArea = Math.max(maxArea,currentArea);
         }
         
         return maxArea;
