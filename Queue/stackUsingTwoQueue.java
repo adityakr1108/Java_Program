@@ -6,7 +6,7 @@ public class stackUsingTwoQueue {
     public boolean isEmpty(){
         return q1.isEmpty() && q2.isEmpty();
     }
-    public void push(int data){
+    public static void push(int data){
         if(!q1.isEmpty()){
             q1.add(data);
         }

@@ -18,7 +18,7 @@ public class queueUsingLinkedList {
         public static boolean isEmpty(){
             return head == null &  tail == null;
         }
-        static void add(int data){
+        public void add(int data){
             Node newNode = new Node(data);
             if(head == null){
                 head = tail = newNode;
