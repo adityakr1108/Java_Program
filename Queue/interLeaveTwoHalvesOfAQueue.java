@@ -29,7 +29,7 @@ public class interLeaveTwoHalvesOfAQueue {
         q.add(10);
         interLeave(q);
         while(!q.isEmpty()){
-            System.out.println(q.peek());
+            System.out.print(q.peek()+ " ");
             q.remove();
         }
     }
