@@ -89,7 +89,6 @@ public class nextGreaterElement {
     }
 
     public static void main(String[] args) {
-    int arr[] = {6,8,0,1,3};
        nextGreaterElementFromRight();
        nextGreaterElementFromLeft();
        nextSmallestElementFromRight(); 

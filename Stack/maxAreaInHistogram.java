@@ -47,6 +47,8 @@ public class maxAreaInHistogram {
             maxArea = Math.max(maxArea,currentArea);
         }
         
+         
+
         return maxArea;
 
 
