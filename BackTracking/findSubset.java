@@ -16,7 +16,7 @@ public class findSubset {
             }
             return;
         }
-        findSubsets(str, ans+str.charAt(i), i+1);
+        findSubsets(str, ans+=str.charAt(i), i+1);
         findSubsets(str, ans, i+1);
 
 
