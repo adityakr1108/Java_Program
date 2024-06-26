@@ -1,4 +1,4 @@
-public class Subtree {
+class subtree {
     public static class Node {
         int data;
         Node left;
@@ -60,7 +60,7 @@ public class Subtree {
 
         Node subRoot = new Node(2);
         subRoot.left = new Node(4);
-        subRoot.right = new Node(8);
+        subRoot.right = new Node(5);
 
         System.out.println(isSubtree(root, subRoot)); // Expected output: true
     }
