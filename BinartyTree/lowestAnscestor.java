@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-class lowestAnscestor{
+class lowestAnscestor{  // O(N) + O(N) + O(N) = O(3N) => O(N)
 
     public static class Node{ 
     int data;
@@ -15,7 +15,7 @@ class lowestAnscestor{
 }
     }
 
-    public static boolean getPath(Node root,int n,ArrayList<Node> path){
+    public static boolean getPath(Node root,int n,ArrayList<Node> path){ // O(n)
         if(root == null){
             return false;
         }
