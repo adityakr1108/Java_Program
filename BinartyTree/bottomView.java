@@ -21,8 +21,8 @@ class bottomView{
         root.right.right = new Node(7);
         root.right.left.right = new Node(8);
         root.right.right.right = new Node(9);
-
-        topView(root);
+          
+        bottomView(root);
 
     }
 
@@ -35,7 +35,7 @@ class bottomView{
         }
     }
 
-    public static void topView(Node root){
+    public static void bottomView(Node root){
         Queue<Info> q = new LinkedList<>();
 
         HashMap<Integer,Node> map = new HashMap<>();
