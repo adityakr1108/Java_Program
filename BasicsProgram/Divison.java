@@ -10,5 +10,6 @@ public class Divison {
             count++;
         }
         System.out.println(count);
+        System.out.println(1%2!=0);
     }
 }

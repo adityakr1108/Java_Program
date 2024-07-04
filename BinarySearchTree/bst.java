@@ -57,6 +57,42 @@ class bst{
            return  search(root.right,data);
         }
     }
+
+    public static Node delete(Node root, int data){
+
+        if(root.data < data){
+            root.right = delete(root.right,data);
+        }
+        else if (root.data > data){
+            root.left = delete(root.left,data);
+        }
+        else{
+        // for no child
+        if(root.left == null && root.right == null){
+            return null;
+        }
+         // for one child
+
+         if(root.left == null){
+            return root.right;
+         }
+         else if(root.right == null){
+            return root.left;
+         }
+            // for two child
+            Node succ = findInorderSuccessor(root.right);
+            root.data = succ.data;
+            root.right = delete(root.right,succ.data);
+            }
+            return root;
+    }
+
+    public static Node findInorderSuccessor(Node root){
+        while(root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
     
     public static void main(String[] args) {
         int arr[] = {5,1,3,2,4,6};
@@ -70,5 +106,9 @@ class bst{
         decresing(root);
         System.out.println();
         System.out.print(search(root, 10));
+        System.out.println();
+        delete(root, 5);
+        inorder(root);
+
     }
 }
