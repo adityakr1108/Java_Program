@@ -31,7 +31,7 @@ class rootToLeafNode{
 public static void main(String[] args){
     List<Integer> temp = new ArrayList<>();
 
-    int arr[] = {8,5,3,6,10,11,14};
+    int arr[] = {8,5,3,1,4,6,10,11,14};
     Node root = null;
     for(int i = 0; i<arr.length;i++){
         root  = insert(root,arr[i]);
