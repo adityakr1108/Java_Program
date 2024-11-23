@@ -11,7 +11,7 @@ public class ArraysList {
         System.out.println(list);
         Collections.sort(list);
         System.out.println(list);
-        Collections.sort(list,Collections.reverseOrder());
+        Collections.sort(list,Collections.reverseOrder()); // for sorting te array in reverae order
         System.out.println(list);
         
 
