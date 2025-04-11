@@ -1,62 +1,52 @@
 import java.util.*;
 
 class cycleDetection {
-    static class Edge {
-        int src, dest;
-
-        Edge(int src, int dest) {
-            this.src = src;
-            this.dest = dest;
-        }
-    }
-
-    public static void buildGraph(ArrayList<Edge>[] graph) {
-        for (int i = 0; i < graph.length; i++) {
-            graph[i] = new ArrayList<>();
-        }
-     graph[0].add(new Edge(0, 1));
-    graph[1].add(new Edge(1, 0));
-    graph[1].add(new Edge(1, 2));
-    graph[1].add(new Edge(1, 3));
-    graph[2].add(new Edge(2, 1));
-    // graph[2].add(new Edge(2, 3));
-    graph[2].add(new Edge(2, 4));
-    graph[3].add(new Edge(3, 1));
-    // graph[3].add(new Edge(3, 2));
-    graph[4].add(new Edge(4, 2));
-    }
-
-    public static boolean cycleDetection(ArrayList<Edge>[] graph) {
-        boolean vis[] = new boolean[graph.length];
-
-        for (int i = 0; i < graph.length; i++) {
-            if (!vis[i]) { 
-                if (cycleDetectionUtil(graph, vis, i, -1)) { // If a cycle is found, return true
+    public static boolean isCycle(ArrayList<ArrayList<Integer>> graph){
+        boolean vis[] = new boolean [graph.size()];
+        Arrays.fill(vis,false);
+        int n = graph.size();
+        for(int i = 0;i<n;i++){
+            if(!vis[i]){
+                if(dfs(graph,i,-1,vis)){
                     return true;
                 }
             }
         }
-        return false; // No cycle found in any component
+        return false;
     }
-
-    public static boolean cycleDetectionUtil(ArrayList<Edge>[] graph, boolean[] vis, int curr, int par) {
-        vis[curr] = true;
-        for (Edge e : graph[curr]) {
-            if (!vis[e.dest]) {
-                if (cycleDetectionUtil(graph, vis, e.dest, curr)) {
+    public static  boolean dfs(ArrayList<ArrayList<Integer>> graph,int node, int par, boolean vis[]){
+        vis[node] = true;
+        for(int a : graph.get(node)){
+            if(!vis[a]){
+                if(dfs(graph,a,node,vis)){
                     return true;
                 }
-            } else if (e.dest != par) { // Cycle detected
+            }
+            else if(a != par){
                 return true;
             }
         }
         return false;
     }
 
-    public static void main(String[] args) {
-        int v = 5;
-        ArrayList<Edge>[] graph = new ArrayList[v]; // Initialize array of ArrayLists
-        buildGraph(graph);
-        System.out.println(cycleDetection(graph));
+    public static void main(String[] args){
+        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+
+        for(int i = 0;i<8;i++){
+            graph.add(new ArrayList<>());
+        }
+        // Define the edges using a 2D array
+        int arr[][] = {
+            {0, 1}, {0, 2}, {1, 3}, {1, 4}, {2, 5}, {2, 6}, {3, 7}, {4, 7}, {5, 6}
+        };
+        
+        for (int[] arr1 : arr) {
+            int a1 = arr1[0];
+            int b1 = arr1[1];
+            graph.get(a1).add(b1);
+            graph.get(b1).add(a1);
+        }
+
+        System.out.println(isCycle(graph));
     }
 }
